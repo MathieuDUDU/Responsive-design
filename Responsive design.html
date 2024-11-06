@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive design</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <nav id="menu">
+        <button><img src="burger.png"></button>
+        <ul>
+            <li><a href="#">Rubrique1</a></li>
+            <li><a href="#">Rubrique2</a></li>
+            <li><a href="#">Rubrique3</a></li>
+            <li><a href="#">Rubrique4</a></li>
+            <li><a href="#">Rubrique5</a></li>
+        </ul>
+    </nav>
+
+<div class="conteneur">
+     <div class="colonne demi seuil-500">
+        <h2>Colonne A</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, cupiditate quidem. Dicta porro libero dignissimos. Tempora quia nisi harum illo omnis distinctio esse, nam recusandae deleniti, optio dicta, iure accusantium.</p>
+    </div>
+        <div class="colonne demi seuil-500">
+        <h2>Colonne B</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit laudantium maiores dolore iure, a quae ducimus animi quis necessitatibus itaque esse at obcaecati et quibusdam ut, harum modi ipsa blanditiis!</p>
+    </div>
+</div>
+   
+   
+<div class="conteneur">
+        <div class="colonne tiers seuil-700">
+            <h2>Colonne C</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita assumenda molestias, necessitatibus voluptatem veritatis maxime ipsum culpa dolore voluptate ex, quasi quod molestiae. Unde corrupti recusandae quisquam mollitia? Exercitationem, necessitatibus.</p>
+            </div>
+        <div class="colonne tiers seuil-700">
+            <h2>Colonne D</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat facilis eaque iste nihil perferendis mollitia ad sit asperiores, velit aut dolore debitis nostrum vel enim a consequuntur, sunt corporis. Magni.</p>
+            </div>
+        <div class="colonne tiers seuil-700">
+                <h2>Colonne E</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit a esse temporibus sequi ullam? Omnis, minus cumque placeat cum sequi tempora magni aut, excepturi est id totam? Possimus, culpa cupiditate!</p>
+         </div>
+</div>
+
+<script>
+
+/*ANCIENNE VERSION - Gérait la classe "visble spécifiquement sur l'élément ul document.querySelector("menu button").onclick
+document.querySelector("#menu button").onclick = function() {
+    this.nextElementSibling.classList.toggle("visible");
+    "this" fait référence au bouton li=ui-même, car on se  trouve dans une fonction (ou méthode) qui"lui appartient"
+    
+    "nextElementSibling" : propriété de tous les éléments HTML,désignat l'éventuel élément suivant (dans le méme parent)
+    
+    "classList.toggle()" : permet d'appliquer automantiquementclassListe.add() ou classList.remove () selon le cas - basculement entre rpésence et absence d'une classe
+
+
+    Version classique: document.querySelector("menu ul").ClassList.toggle("visible")
+}*/
+let menu = document.querySelector("#menu")
+
+ menu.querySelector("button").onclick= function() {
+    menu.classList.toggle ("visible")
+}
+</script>
+  
+   
+</body>
+</html>

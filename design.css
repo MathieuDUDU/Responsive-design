@@ -1,0 +1,96 @@
+
+.conteneur{
+ display: flex;
+gap: 20px;
+}
+
+/* Classe pour une colonne occupant la moitié de la fenêtre dans la largeur */
+.demi{
+    width: calc(50% - 10px)
+}
+.tiers {
+    width:33.33%;
+}
+#menu {
+    height: 70px;
+    display:flex;
+    align-items: center;
+   background-color: rgb(5, 116, 97);
+}
+#menu ul{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    margin: 0;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    font-size: 22px;
+}
+#menu button {
+    background-color: transparent;
+    flex-shrink: 0;
+    width: 50px;
+    display: none;
+    transition: margin-top 1s;
+}
+#menu button img{
+    width: 100%;
+}
+
+#menu a{
+    color: white;
+    text-decoration: none;
+}
+
+/*Boutton"burger"*/
+
+
+/* Seuil des 900px : ne conserne que la menu */
+@media screen and (max-width: 900px){
+
+
+#menu{
+    height: auto; 
+    /*Pour annuler la hauteur forcée que l'on a donné par défaut au menu (et lui permettre d'afficher toutes les rubriques correctement)*/
+    align-items: flex-start; /*Plus besoin de centrage vertical, tout peut être calé en haut du menu */
+}
+   #menu ul {
+    display: none; /* Le contenu est mesqué par défaut...*/
+    flex-direction: column; /*...et lorsque'il sera afficher, il doit se présenter verticalemnt*/
+    margin: 20ox 0px; /* 2 valeurs : top & bottom puis left & right*/
+   }
+   #menu button{
+    display: block;/* Pour annuler display : none donc le masquage*/
+
+   }
+   #menu.visible button{
+    margin-top: 15px;
+   }
+
+   #menu.visible ul{
+    display: flex;
+   }
+}
+
+/*Bloc de régles qui na s'appliqueront que si le support (la fenêtre) fait 600px de large ou moins*/
+@media screen and (max-width:700px) {
+    
+    .conteneur{
+        /* flex-direction: column; */
+        flex-wrap: wrap; /* Rendre possible plusieurs "rangées" d'éléments dans le conteneur*/
+    
+    }
+    /* Amelioration:
+    Les colonnes "1/3"peuvent passer en affichage "mobile" plus tôt (seuil plus large), et les colonnes "1/2" plus tard*/
+}   
+
+    .seuil-700{
+        width: 100%;/* Les colonnes portant cette classe occupent toute la largeur du conteneur aà partir du seuil de 700px de large ou moins */
+}
+ @media screen and (max-width: 500px) {
+     .seuil-500{
+        width: 100%;
+     }  
+ }
